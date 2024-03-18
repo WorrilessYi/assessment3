@@ -58,5 +58,28 @@
             Personal number: P437036<br>
         </footer>
     </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Intercept form submission
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Example: AJAX request to submit form data
+            fetch('/data_collection', {
+                method: 'POST',
+                body: new FormData(this)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message); // Show popup message
+                location.reload(); // Reload the page
+                window.scrollTo(0, 0); // Scroll to the top
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    });
+</script>
 </body>
 </html>

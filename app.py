@@ -5,14 +5,17 @@ from forms import MyForm
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '1234'
 csrf = CSRFProtect(app)
+# Define Flask Routes
 
 @app.route('/')
 def welcome():
     return render_template('welcome.html')
 
+
 @app.route('/information')
 def information():
     return render_template('information.html')
+
 
 @app.route('/data_collection', methods=['GET', 'POST'])
 def data_collection():
@@ -40,7 +43,6 @@ def data_collection():
         return render_template('data_collection.html', form=form)
 
 
-# Define Flask Routes
 
 if __name__ == '__main__':
     app.run(debug=True)
