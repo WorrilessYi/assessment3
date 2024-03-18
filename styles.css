@@ -1,0 +1,159 @@
+/* External CSS File of GIC Progress Assessment Website */
+
+/* General Styling */
+.container {
+    /*Set the maximum width and height*/
+    max-width: 500px;
+    min-height: 500px;
+    /*sets margin and padding*/
+    margin: 0 auto;
+    padding: 10px;
+    /*so its edges are round*/
+    border-radius: 4px;
+    /*setting background color*/
+    background-color: #F0F0F0
+}
+.paragraph {
+    margin: 0 auto;
+    background-color: beige;
+    border-radius: 4px;
+    color: #3d3d3e;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 40px;
+    min-height: 460px;
+    max-width: 450px;
+    max-height: 900px;
+}
+body {
+    /*setting background image for aesthetic*/
+    background-image: url('HERO-UGalsgow_1127848313.jpg');
+    background-size: cover; /* Ensures the image covers the entire background */
+}
+
+/* Header Styling */
+header {
+    max-width:520px;
+    height: 100px;
+    margin:auto;
+    background-color: orange;}
+footer{
+    color: black;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px;
+}
+.logo {
+    float: left;
+    /*so it sticks to the left of the screen*/
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 30px;
+    min-width: 100px;
+    /*setting minimum width so it doesn't get squished*/
+    height: 65px;}
+nav ul {
+    list-style-type: none;
+        padding-top: 40px;
+}
+
+nav ul li {
+    display: inline;
+    /*so the list is not vertical but horizontal*/
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    padding: 10px;
+    /*so there's no line underneath or extra decoration for the links*/
+    text-decoration: none;
+    /*setting the font-size and bold so its easy to spot and see*/
+    font-size: 20px;
+    font-weight: bold;
+}
+img {
+    border-radius: 4px;
+    max-width: 420px;
+    max-height: 170px;
+    /*padding so its not glued with other elements*/
+    padding-bottom: 20px;
+    /*tried making it relative to the size of the screen */
+    position: relative;
+}
+
+/* Form Styling */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+/*setting the input type to make sure the client entered the correct information*/
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: orange;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+/*button animation code*/
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 15px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/*Hides one logo and displays the other logo based on screen width.*/
+#logo2 {
+     display: none;
+    }
+
+    @media screen and (max-width: 600px) {
+     #logo2 {
+      display: block;
+     }
+     #logo {
+      display: none;
+     }
+    }
