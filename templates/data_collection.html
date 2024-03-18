@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection - GIC Progress Assessment</title>
+    <link rel="icon" type="image/x-icon" href="../static/UofG_Coat_of_Arms.png"><!-- uni logo as icon for page link-->
+    <link rel="stylesheet" href="../static/styles.css"> <!-- Link to external CSS file for styling -->
+</head>
+<body>
+    <header>
+    <div class="logo"><!--Big and small logo depending on the size of the device-->
+        <a id="logo"> <img src="../static/University-of-Glasgow.png" alt="UofG logo" width="180" height="65"/> </a>
+        <a id="logo2"> <img src="../static/UofG_Coat_of_Arms.png" alt="UofG logo" height="65"/></a>
+    </div>
+    <nav>
+        <ul><!--unordered list to contain the links for better access-->
+            <li><a href="{{ url_for('welcome') }}">Home</a></li>
+            <li><a href="{{ url_for('information') }}">About</a></li>
+            <li><a href="{{ url_for('data_collection') }}">Data</a></li>
+        </ul>
+    </nav>
+    </header>
+    <div class="container">
+        <div class="paragraph"><h2>Student Progress Data Collection</h2>
+            <form action="/data_collection" method="post">
+                {{ form.csrf_token }}
+                <div>
+                    {{ form.name.label }}
+                    {{ form.name }}
+                </div>
+                <div>
+                    {{ form.student_number.label }}
+                    {{ form.student_number }}
+                </div>
+                <div>
+                    {{ form.email.label }}
+                    {{ form.email }}
+                </div>
+                <div>
+                    {{ form.course_grades.label }}
+                    {{ form.course_grades }}
+                </div>
+                <div>
+                    {{ form.satisfaction.label }}
+                    {{ form.satisfaction }}
+                </div>
+                <div>
+                    {{ form.improvements.label }}
+                    {{ form.improvements }}
+                </div>
+                <!--Label and input area for each one-->
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <footer>
+            Glasgow International College<br>
+            Personal number: P437036<br>
+        </footer>
+    </div>
+</body>
+</html>
