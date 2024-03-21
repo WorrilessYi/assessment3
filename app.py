@@ -5,8 +5,8 @@ from forms import MyForm
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '1234'
 csrf = CSRFProtect(app)
-# Define Flask Routes
 
+# Define Flask Routes
 @app.route('/')
 def welcome():
     return render_template('welcome.html')
@@ -19,7 +19,7 @@ def information():
 
 @app.route('/data_collection', methods=['GET', 'POST'])
 def data_collection():
-    form = MyForm()  # Instantiate your WTForm
+    form = MyForm()  # Instantiate WTForm
     if request.method == 'POST':
         # Extract data from the form
         name = request.form['name']
@@ -37,7 +37,7 @@ def data_collection():
             file.write(f"Course Grades: {course_grades}\n")
             file.write(f"Satisfaction: {satisfaction}\n")
             file.write(f"Improvements: {improvements}\n\n")
-
+        # Return JSON response indicating successful form submission
         return jsonify({'message': 'Form submitted successfully'})
     else:
         return render_template('data_collection.html', form=form)
