@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="icon" type="image/x-icon" href="../static/UofG_Coat_of_Arms.png">
-    <!-- uni logo as icon for page link-->
-    <link rel="stylesheet" href="../static/styles.css"><!-- Link to external CSS file for styling -->
+     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='UofG_Coat_of_Arms.png') }}"> <!-- uni logo as icon for page link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Link to external CSS file for styling -->
 </head>
 <body>
     <header>
         <div class="logo"><!--Big and small logo depending on the size of the device-->
-            <a id="logo" href="#"><img src="../static/University-of-Glasgow.png" alt="UofG logo" width="180" height="65"></a>
-            <a id="logo2" href="#"><img src="../static/UofG_Coat_of_Arms.png" alt="UofG logo" height="65"></a>
+            <a id="logo" href="#"><img src="{{ url_for('static', filename='University-of-Glasgow.png') }}" alt="UofG logo" width="180" height="65"></a>
+            <a id="logo2" href="#"><img src="{{ url_for('static', filename='UofG_Coat_of_Arms.png') }}" alt="UofG logo" height="65"></a>
         </div>
         <nav>
             <ul>
@@ -28,7 +27,7 @@
             <h2>Welcome to our monthly survey page!</h2>
             <p>This website serves as a platform for assessing and collecting data on students' progress at Glasgow International College (GIC). Navigate through the different sections to learn more about the purpose of data collection and participate in the progress assessment.</p>
             <p>Explore the site and contribute to the enhancement of academic and overall student experience at GIC.</p>
-            <img src="../static/grad3.webp" width="420" height="170" alt="Happy students image"/>
+            <img src="{{ url_for('static', filename='grad3.webp') }}" width="420" height="170" alt="Happy students image"/>
             <!-- I thought the page was a little empty so added a fun picture-->
             <!-- Adjusting the size was hard -.- -->
             <a href="{{ url_for('information') }}"><button class="button" style="vertical-align:middle"><span>Next</span></button></a>
